@@ -1,9 +1,0 @@
-{
-  "editor.insertSpaces": true,
-  "editor.formatOnSave": true,
-  "editor.renderWhitespace": "all",
-  "editor.tabSize": 2,
-  "files.eol": "\n",
-  "prettier.singleQuote": true,
-  "prettier.trailingComma": "all"
-}
