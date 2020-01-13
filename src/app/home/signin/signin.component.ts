@@ -1,6 +1,8 @@
 import { Component, OnInit, ElementRef, ViewChild } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
+import { Title } from "@angular/platform-browser";
+
 import { AuthService } from "src/app/core/auth/auth.service";
 import { PlatformDetectorService } from "src/app/core/platform-detector/platform-detector.service";
 
@@ -17,10 +19,12 @@ export class SigninComponent implements OnInit {
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private router: Router,
-    private platformDetectorService: PlatformDetectorService
+    private platformDetectorService: PlatformDetectorService,
+    private titleService: Title
   ) {}
 
   ngOnInit() {
+    this.titleService.setTitle("Login");
     this.loginForm = this.formBuilder.group({
       userName: ["", Validators.required],
       password: ["", Validators.required]

@@ -12,7 +12,8 @@ const routes: Routes = [
   {
     path: "",
     pathMatch: "full",
-    redirectTo: "home"
+    redirectTo: "home",
+    data: { title: "Timeline" }
   },
   { path: "home", loadChildren: "./home/home.module#HomeModule" },
   {
@@ -25,13 +26,19 @@ const routes: Routes = [
   {
     path: "p/add",
     component: PhotoFormComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    data: { title: "Photo upload" }
   },
   {
     path: "p/:photoId",
-    component: PhotoDetailsComponent
+    component: PhotoDetailsComponent,
+    data: { title: "Photo detail" }
   },
-  { path: "not-found", component: NotFoundComponent },
+  {
+    path: "not-found",
+    component: NotFoundComponent,
+    data: { title: "Not found" }
+  },
   { path: "**", redirectTo: "not-found" }
 ];
 
